@@ -91,6 +91,19 @@ new_df.show()
 
 
 
+a=[1,121,21212,32,3232,3434,343,434,3]
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+print()
+
+
+
+
+
+
+
 
 
 
