@@ -65,3 +65,4 @@ plt.title("SVM Decision Boundary")
 plt.show()
 
 print("hello_task")
+print("data connection_faild")
