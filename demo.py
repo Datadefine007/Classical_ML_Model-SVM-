@@ -42,3 +42,58 @@ df = spark.createDataFrame(data, schema=schema)
 
 # Show the DataFrame
 df.show()
+
+
+from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+
+# Create a Spark session
+spark = SparkSession.builder.appName("example").getOrCreate()
+
+# Define the schema for the DataFrame
+schema = StructType([
+    StructField("name", StringType(), True),
+    StructField("salary", IntegerType(), True),
+    StructField("age", IntegerType(), True),
+    StructField("location", StringType(), True),
+    StructField("company", StringType(), True)
+])
+
+# Create a list of tuples with the new data (20 records)
+new_data = [
+    ("Sophia", 52000, 26, "Vancouver", "ABC Inc Canada"),
+    ("Liam", 61000, 31, "Toronto", "XYZ Corp Canada"),
+    ("Emma", 74000, 36, "Montreal", "123 Ltd Canada"),
+    ("Noah", 79000, 29, "Calgary", "PQR Enterprises Canada"),
+    ("Ava", 56000, 33, "Edmonton", "456 Company Canada"),
+    ("Jackson", 73000, 38, "Ottawa", "LMN Solutions Canada"),
+    ("Isabella", 68000, 28, "Quebec City", "789 Industries Canada"),
+    ("Lucas", 91000, 43, "Winnipeg", "DEF Limited Canada"),
+    ("Aria", 63000, 30, "Halifax", "GHI Corporation Canada"),
+    ("Ethan", 75000, 35, "Saskatoon", "JKL Co Canada"),
+    ("Mila", 82000, 40, "Regina", "MNO Enterprises Canada"),
+    ("Oliver", 69000, 32, "Victoria", "PST Inc Canada"),
+    ("Amelia", 87000, 37, "Hamilton", "UVW Corporation Canada"),
+    ("William", 64000, 27, "London", "XYZ Ltd Canada"),
+    ("Sophie", 94000, 42, "Windsor", "123 Solutions Canada"),
+    ("Mason", 60000, 34, "Oshawa", "ABC Co Canada"),
+    ("Lily", 79000, 39, "Barrie", "456 Enterprises Canada"),
+    ("Elijah", 66000, 29, "Kingston", "789 Ltd Canada"),
+    ("Harper", 96000, 45, "Niagara Falls", "DEF Solutions Canada"),
+    ("Logan", 63000, 31, "Sudbury", "GHI Corporation Canada")
+]
+
+# Create a DataFrame using the schema and new data
+new_df = spark.createDataFrame(new_data, schema=schema)
+
+# Show the new DataFrame
+new_df.show()
+
+
+
+
+
+
+
+
+
